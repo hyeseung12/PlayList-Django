@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>플리</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Character list{% endblock %}
 
-</body>
-</html>
+{% block content %}
+
+    {% load static %}
+    <img src="{% static '플리/solar_play-bold-duotone.svg' %}" alt="logo">
+
+
+{% endblock %}
