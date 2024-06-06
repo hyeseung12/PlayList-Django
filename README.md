@@ -22,6 +22,7 @@
          2. style.css > 전역 스타일 시트
       2. img/
          1. solar_play-bold-duotone.svg > 로고 이미지
+         2. sound-bar.svg > 사운드바 이미지
 4. templates/
    1. base.html
       1. settings.py > TEMPLATES
