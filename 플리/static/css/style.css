@@ -22,3 +22,14 @@ h1 {
     font-size: var(--title-font-size);
     font-weight: var(--title-font-weight);
 }
+
+.container-logo {
+    display: inline-flex;
+    margin-top: 70px;
+    margin-left: 60px;
+}
+
+.project-name {
+    margin-top: 6px;
+    margin-left: 14px;
+}
