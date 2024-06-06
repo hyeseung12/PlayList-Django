@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
+
+{% load static %}
+
 {% block title %}Character list{% endblock %}
+{% block meta %}<link rel="stylesheet" href={% static 'css/index.css' %}/>{% endblock %}
 
 {% block content %}
 
-    {% load static %}
-    <img src="{% static '플리/solar_play-bold-duotone.svg' %}" alt="logo">
-
+    {# logo #}
+    <div class="container-logo">
+        <img src="{% static 'img/solar_play-bold-duotone.svg' %}" alt="logo">
+        <h1 class="project-name">플리</h1>
+    </div>
 
 {% endblock %}
