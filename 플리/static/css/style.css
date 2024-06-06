@@ -44,7 +44,6 @@ h1 {
 
 .container-logo {
     display: inline-flex;
-    flex-basis: auto;
     margin-left: 60px;
 }
 
