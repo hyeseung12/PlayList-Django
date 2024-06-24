@@ -12,10 +12,13 @@
 3. 플리/
    1. views
       1. show_index
+      2. show_login
    2. templates/플리/
       1. index.html
+      2. login.html
    3. urls
       1. 플리:show_index
+      2. 플리:show_login
    4. static/
       1. css/
          1. index.css > index html 스타일 시트
