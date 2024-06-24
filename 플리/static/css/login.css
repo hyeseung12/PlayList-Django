@@ -1,16 +1,16 @@
 .container-login {
     text-align: center;
-    margin-top: 10vmin;
+    margin-top: 8vmin;
 }
 
 form {
-    margin-top: 8vmin;
+    margin-top: 7vmin;
     line-height: 95px;
 }
 
 input[type='text'], button[type='submit'] {
-    width: 800px;
-    height: 68px;
+    width: 80vmin;
+    height: 6.8vmin;
     border-radius: 10px;
 }
 
