@@ -27,7 +27,7 @@ h1 {
     font-weight: var(--title-font-weight);
 }
 
-.nav-link {
+.nav-link, p {
     font-size: var(--content-font-size);
     font-weight: var(--content-font-weight);
     color: var(--grey01);
