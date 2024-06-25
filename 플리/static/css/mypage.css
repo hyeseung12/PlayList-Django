@@ -1,0 +1,12 @@
+.container-title {
+    display: inline-flex;
+}
+
+.button {
+    margin-left: 2vmin;
+    border: 0;
+    background-color: transparent;
+    font-size: 5vmin;
+    color: var(--primary);
+    margin-top: -1.5vmin;
+}
