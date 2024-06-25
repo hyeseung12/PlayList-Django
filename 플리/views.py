@@ -15,3 +15,7 @@ def show_signup(request):
 def show_url(request):
     context = {}
     return render(request, '플리/url.html', context=context)
+
+def show_mypage(request):
+    context = {}
+    return render(request, '플리/mypage.html', context=context)
