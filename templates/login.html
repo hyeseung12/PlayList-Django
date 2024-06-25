@@ -9,7 +9,7 @@
 
 {% block content %}
     <div class="container">
-        <h1>로그인</h1>
+        <h1>{% block h1 %}{% endblock %}</h1>
         <p>사용자 정보를 입력해주세요!</p>
         <form method="post" action="/플리">
             <input type="text" name="id" placeholder="아이디 입력"/><br>
