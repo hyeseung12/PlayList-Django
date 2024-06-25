@@ -30,8 +30,7 @@
    5. static/
       1. css/
          1. index.css > index html 스타일 시트
-         2. login.css > login html 스타일 시트
-         3. singup.css > signup html 스타일 시트
+         2. login.css > login, signup html 스타일 시트
          4. style.css > 전역 스타일 시트
       2. img/
          1. solar_play-bold-duotone.svg > 로고 이미지
@@ -40,3 +39,4 @@
    1. base.html
       1. settings.py > TEMPLATES
          1. 'DIRS': [BASE_DIR / 'templates']
+   2. login.html
