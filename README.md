@@ -18,16 +18,21 @@
    2. views
       1. show_index
       2. show_login
+      3. show_signup 
    3. templates/플리/
       1. index.html
       2. login.html
+      3. signup.html
    4. urls
       1. 플리:show_index
       2. 플리:show_login
+      3. 플리:show_signup
    5. static/
       1. css/
          1. index.css > index html 스타일 시트
-         2. style.css > 전역 스타일 시트
+         2. login.css > login html 스타일 시트
+         3. singup.css > signup html 스타일 시트
+         4. style.css > 전역 스타일 시트
       2. img/
          1. solar_play-bold-duotone.svg > 로고 이미지
          2. sound-bar.svg > 사운드바 이미지

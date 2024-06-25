@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {% block login %}{% endblock %}
+{% endblock %}
+{% block meta %}<link rel="stylesheet" href={% static 'css/login.css' %}/>{% endblock %}
+
+{% block content %}
+    <div class="container-login">
+        <h1>로그인</h1>
+        <p>사용자 정보를 입력해주세요!</p>
+        <form method="post" action="/플리">
+            <input type="text" name="id" placeholder="아이디 입력"/><br>
+            <input type="text" name="pw" placeholder="비밀번호 입력"/><br>
+            <button type="submit" name="login">{% block button %}{% endblock %}</button>
+        </form>
+        {% block signup %}{% endblock %}
+    </div>
+{% endblock %}

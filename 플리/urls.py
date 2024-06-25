@@ -6,5 +6,6 @@ app_name = '플리'
 
 urlpatterns = [
     path('', views.show_index, name='show_index'),
-    path('login/', views.show_login, name='show_login')
+    path('login/', views.show_login, name='show_login'),
+    path('signup/', views.show_signup, name='show_signup')
 ]
