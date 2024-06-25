@@ -10,16 +10,21 @@
    1. python manage.py startapp 플리
    2. '플리', in INSTALLED_APPS in settings.py
 3. 플리/
-   1. views
+   1. models
+      1. User
+         1. id, pw, created_at, updated_at
+      2. python manage.py makemigrations 플리
+      3. python manage.py migrate
+   2. views
       1. show_index
       2. show_login
-   2. templates/플리/
+   3. templates/플리/
       1. index.html
       2. login.html
-   3. urls
+   4. urls
       1. 플리:show_index
       2. 플리:show_login
-   4. static/
+   5. static/
       1. css/
          1. index.css > index html 스타일 시트
          2. style.css > 전역 스타일 시트
