@@ -1,5 +1,6 @@
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, UserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 class UserManager(BaseUserManager):
     def create_user(self, email, nickname, password=None):
@@ -28,7 +29,6 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    objects = UserManager()
 
     email = models.EmailField(
         max_length=255,
@@ -40,8 +40,24 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['nickname']
 
+    objects = UserManager()
+
+    class Meta:
+        verbose_name = _('user')
+        verbose_name_plural = _('users')
+        ordering = ('-date_joined',)
+
     def __str__(self):
+        return self.email
+
+    def get_full_name(self):
         return self.nickname
+
+    def get_short_name(self):
+        return self.nickname
+
+    get_full_name.short_description = _('Full name')
