@@ -19,30 +19,38 @@
       4. python manage.py migrate
    2. views
       1. show_index
-      2. EmailLoginView
-      3. SignUpView
+      2. show_login
+      3. show_signup
       4. show_url
       5. show_mypage
+      6. show_create
    3. templates/플리/
       1. index.html
       2. login.html
       3. signup.html
       4. url.html
-      5. mypage.html
+      5. playlist_list.html
+      6. playlist_create.html
    4. urls
       1. 플리:show_index
       2. 플리:EmailLoginView.as_view()
       3. 플리:SingUpView.as_view()
       4. 플리:show_url
-      5. 플리:show_mypage
+      5. 플리:playListview.as_view()
+      6. 플리:PlayListCreateView.as_view()
    5. static/
       1. css/
          1. index.css > index html 스타일 시트
-         2. login.css > login, signup html 스타일 시트
-         4. style.css > 전역 스타일 시트
+         2. login.css > login, signup html 스타일 시트 
+         3. style.css > 전역 스타일 시트
+         4. create.css > playList create html 스타일
+         5. mypage.css > playList list view html 스타일
+         6. url.css > url html 스타일 시트
       2. img/
          1. solar_play-bold-duotone.svg > 로고 이미지
          2. sound-bar.svg > 사운드바 이미지
+         3. delete.svg > playList 삭제 이미지
+         4. edit.svg > playList 수정 이미지
 4. templates/
    1. base.html
       1. settings.py > TEMPLATES

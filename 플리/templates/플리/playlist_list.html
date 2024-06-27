@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Character list{% endblock %}
+{% block meta %}<link rel="stylesheet" href={% static 'css/mypage.css' %}/>{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="container-title">
+            <h1>플레이리스트</h1>
+            <button type="button" class="button" onclick="location.href='/플리/create'">+</button>
+        </div>
+        <br>
+        <div class="container-content">
+            {% for playList in playlist_list %}
+                <div class="container-playlist">
+                    <img src="/static/{{ playList.image }}" class="playlist-img"/><br>
+                    <div class="container-info">
+                        <h2>{{ playList.title }}</h2>
+
+                        <div class="container-option">
+                            <button type="button">
+                                <img src="/static/img/delete.svg" class="playlist-delete-edit-img"/>
+                            </button>
+
+                            <button type="button">
+                                <img src="/static/img/edit.svg" class="playlist-delete-edit-img"/>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
