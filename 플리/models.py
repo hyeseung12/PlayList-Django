@@ -1,12 +1,12 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
-from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from playList import settings
 
+
 class UserManager(BaseUserManager):
-    def create_user(self, email, nickname, last_login=None, password=None):
+    def create_user(self, email, nickname, password=None):
         if not email:
             raise ValueError('must have user email')
 
@@ -43,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
-    last_login = models.DateTimeField(null=True)
+    last_login = models.DateTimeField(null=True, blank=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['nickname']
@@ -78,3 +78,12 @@ class PlayList(models.Model):
 
     def __str__(self):
         return f'{self.title} {self.image} {self.created_at} {self.updated_at} {self.author}'
+
+class Video(models.Model):
+    title = models.CharField(max_length=100)
+    url = models.TextField()
+    uploader_name = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.title} {self.url} {self.uploader_name} { self.created_at}'
