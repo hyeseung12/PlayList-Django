@@ -46,3 +46,7 @@ def show_url(request):
 def show_mypage(request):
     context = {}
     return render(request, '플리/mypage.html', context=context)
+
+def show_create(request):
+    context = {}
+    return render(request, '플리/create.html', context=context)

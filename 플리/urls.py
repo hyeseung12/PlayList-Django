@@ -11,4 +11,5 @@ urlpatterns = [
     path('signup/', SignUpView.as_view(), name='show_signup'),
     path('url/', views.show_url, name='show_url'),
     path('mypage/', views.show_mypage, name='show_mypage'),
+    path('create/', views.show_create, name='show_create'),
 ]
