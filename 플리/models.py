@@ -1,11 +1,12 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from playList import settings
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, nickname, password=None):
+    def create_user(self, email, nickname, last_login=None, password=None):
         if not email:
             raise ValueError('must have user email')
 
@@ -22,7 +23,7 @@ class UserManager(BaseUserManager):
         user = self.create_user(
             email=self.normalize_email(email),
             nickname=nickname,
-            password=password
+            password=password,
         )
         user.is_superuser = True
         user.is_staff = True
@@ -42,6 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
+    last_login = models.DateTimeField(null=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['nickname']
@@ -66,6 +68,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class PlayList(models.Model):
     title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='img/플리/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(

@@ -1,9 +1,10 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from django.views.generic import FormView
+from django.utils import timezone
+from django.views.generic import FormView, CreateView
 
 from 플리.forms import EmailLoginForm, UserCreateForm, SignUpForm
-from 플리.models import User
+from 플리.models import User, PlayList
 
 
 def show_index(request):
@@ -18,6 +19,7 @@ class EmailLoginView(FormView):
         email = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
         user = User.objects.filter(email=email, password=password).first();
+        user.last_login = timezone.now()
         if user is not None:
             login(self.request, user)
             return redirect('플리:show_index')
@@ -46,6 +48,10 @@ def show_url(request):
 def show_mypage(request):
     context = {}
     return render(request, '플리/mypage.html', context=context)
+
+class PlayListCreateView(CreateView):
+    model = PlayList
+    fields = ['title', 'image', 'author']
 
 def show_create(request):
     context = {}

@@ -3,10 +3,19 @@
 {% load static %}
 
 {% block title %}Create PlayList{% endblock %}
-{% block meta %}<link rel="stylesheet" href={% static 'css/create.css' %}/>{% endblock %}
-
+{% block meta %}
+    <link rel="stylesheet" href={% static 'css/create.css' %}/>{% endblock %}
 {% block content %}
 
-    <h1>Create PlayList</h1>
+    <div class="container">
+        <h1>Create PlayList</h1>
+        <p>본인만의 커스텀 플레이리스트를 만들어보세요!</p>
+        <form method="post" action="{% url '플리:show_mypage' %}">
+            {% csrf_token %}
+
+            <input type="text" name="title" placeholder="제목 입력"/>
+            <button type=""
+        </form>
+    </div>
 
 {% endblock %}
