@@ -13,20 +13,28 @@
    1. models
       1. User
          1. id, pw, created_at, updated_at
-      2. python manage.py makemigrations 플리
-      3. python manage.py migrate
+      2. PlayList
+         1. id, title, created_at, updated_at, author
+      3. python manage.py makemigrations 플리
+      4. python manage.py migrate
    2. views
       1. show_index
-      2. show_login
-      3. show_signup 
+      2. EmailLoginView
+      3. SignUpView
+      4. show_url
+      5. show_mypage
    3. templates/플리/
       1. index.html
       2. login.html
       3. signup.html
+      4. url.html
+      5. mypage.html
    4. urls
       1. 플리:show_index
-      2. 플리:show_login
-      3. 플리:show_signup
+      2. 플리:EmailLoginView.as_view()
+      3. 플리:SingUpView.as_view()
+      4. 플리:show_url
+      5. 플리:show_mypage
    5. static/
       1. css/
          1. index.css > index html 스타일 시트
@@ -39,4 +47,3 @@
    1. base.html
       1. settings.py > TEMPLATES
          1. 'DIRS': [BASE_DIR / 'templates']
-   2. login.html
