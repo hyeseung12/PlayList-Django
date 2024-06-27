@@ -42,10 +42,6 @@ class SignUpView(FormView):
 
         return self.form_invalid(form)
 
-def show_url(request):
-    context = {}
-    return render(request, '플리/url.html', context=context)
-
 class PlayListView(ListView):
     model = PlayList
 
