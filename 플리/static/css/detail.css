@@ -24,9 +24,9 @@
 }
 
 iframe {
-    position: ;
     width: 40vmin;
     height: 25vmin;
+    margin-right: 2vmin;
 }
 
 h4 {
