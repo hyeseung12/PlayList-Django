@@ -24,3 +24,14 @@ button[type='submit'] {
     color: white;
     font-size: var(--content-font-size);
 }
+
+button[type='button'] {
+    width: 40vmin;
+    height: 5vmin;
+    line-height: 0;
+    border: 0;
+    margin-top: 62px;
+    background-color: gray;
+    color: white;
+    font-size: var(--content-font-size);
+}
