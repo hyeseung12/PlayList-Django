@@ -77,3 +77,7 @@ class PlayListUpdateView(UpdateView):
 class PlayListDeleteView(DeleteView):
     model = PlayList
     success_url = reverse_lazy('플리:show_mypage')
+
+class VideoDeleteView(DeleteView):
+    model = Video
+    success_url = reverse_lazy('플리:show_mypage')

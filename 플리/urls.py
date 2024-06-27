@@ -2,7 +2,7 @@ from django.urls import path
 
 from 플리 import views
 from 플리.views import EmailLoginView, SignUpView, PlayListCreateView, PlayListView, PlayListDeleteView, \
-    PlayListUpdateView, PlayListDetailView, VideoCreateView
+    PlayListUpdateView, PlayListDetailView, VideoCreateView, VideoDeleteView
 
 app_name = '플리'
 
@@ -17,5 +17,5 @@ urlpatterns = [
     path('play/update/<int:pk>/', PlayListUpdateView.as_view(), name='show_update'),
     path('play/detail/<int:pk>/', PlayListDetailView.as_view(), name='show_detail'),
     path('video/create/', VideoCreateView.as_view(), name='show_video_create'),
-
+    path('video/delete/<int:pk>/', VideoDeleteView.as_view(), name='show_video_delete'),
 ]
