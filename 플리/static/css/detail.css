@@ -2,3 +2,25 @@
     text-align: center;
     margin-top: 4vmin;
 }
+
+.container-title {
+    display: inline-flex;
+}
+
+.cancel, .plus {
+    border: 0;
+    background-color: transparent;
+    font-size: var(--title-font-size);
+    margin-top: -1.4vmin;
+}
+
+.cancel {
+    color: gray;
+    margin-right: 2vmin;
+    font-size: 25px;
+}
+
+.plus {
+    color: var(--primary);
+    margin-left: 2vmin;
+}
