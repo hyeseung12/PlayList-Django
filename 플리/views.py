@@ -12,6 +12,10 @@ def show_index(request):
     context = {}
     return render(request, '플리/index.html', context=context)
 
+def show_url(request):
+    context = {}
+    return render(request, '플리/url.html', context=context)
+
 class EmailLoginView(FormView):
     form_class = EmailLoginForm
     template_name = '플리/login.html'

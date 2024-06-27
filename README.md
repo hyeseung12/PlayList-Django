@@ -1,5 +1,7 @@
 # 플리
 
+
+
 1. startproject playList
    1. python -m pip install django~=4.2
    2. django-admin startproject playList

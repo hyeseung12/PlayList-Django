@@ -11,6 +11,7 @@ urlpatterns = [
     path('login/', EmailLoginView.as_view(), name='show_login'),
     path('signup/', SignUpView.as_view(), name='show_signup'),
     path('mypage/', PlayListView.as_view(), name='show_mypage'),
+    path('url/', views.show_url, name='show_url'),
     path('play/create/', PlayListCreateView.as_view(), name='show_create'),
     path('play/delete/<int:pk>/', PlayListDeleteView.as_view(), name='show_delete'),
     path('play/update/<int:pk>/', PlayListUpdateView.as_view(), name='show_update'),
