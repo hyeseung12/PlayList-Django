@@ -21,7 +21,7 @@
                         <h2>{{ playList.title }}</h2>
 
                         <div class="container-option">
-                            <button type="button">
+                            <button type="button" onclick="location.href='{% url '플리:show_delete' pk=playList.id %}'">
                                 <img src="/static/img/delete.svg" class="playlist-delete-edit-img"/>
                             </button>
 

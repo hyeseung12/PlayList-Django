@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Delete PlayList{% endblock %}
+{% block meta %}
+    <link rel="stylesheet" href={% static 'css/delete.css' %}/>{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <h1>Delete '{{ playlist.title }}' PlayList</h1>
+        <p>{{ playlist.title }} 를(을) 정말 삭제하시겠습니까?</p>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">삭제하기</button>
+            <button type="button" onclick="history.back()">취소하기</button>
+        </form>
+    </div>
+
+{% endblock %}

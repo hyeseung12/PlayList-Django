@@ -2,7 +2,7 @@ from django.contrib.auth import login
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils import timezone
-from django.views.generic import FormView, CreateView, ListView
+from django.views.generic import FormView, CreateView, ListView, DeleteView
 
 from 플리.forms.user_forms import EmailLoginForm, SignUpForm
 from 플리.models import User, PlayList
@@ -55,3 +55,6 @@ class PlayListCreateView(CreateView):
     template_name_suffix = '_create'
     success_url = reverse_lazy('플리:show_mypage')
 
+class PlayListDeleteView(DeleteView):
+    model = PlayList
+    success_url = reverse_lazy('플리:show_mypage')
