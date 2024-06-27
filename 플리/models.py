@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from playList import settings
+
 class UserManager(BaseUserManager):
     def create_user(self, email, nickname, password=None):
         if not email:
@@ -61,3 +63,15 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.nickname
 
     get_full_name.short_description = _('Full name')
+
+class PlayList(models.Model):
+    title = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return f'{self.title} {self.created_at} {self.updated_at} {self.author}'
