@@ -114,7 +114,7 @@ STATIC_URL = 'static/'
 
 #STATIC
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / '플리/static',
 ]
 
 # Default primary key field type

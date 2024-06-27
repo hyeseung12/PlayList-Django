@@ -83,6 +83,10 @@ class Video(models.Model):
     title = models.CharField(max_length=100)
     url = models.TextField()
     uploader_name = models.CharField(max_length=100)
+    playlist = models.ForeignKey(
+        PlayList,
+        on_delete=models.CASCADE,
+    )
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
