@@ -11,7 +11,12 @@
         <div class="container-title">
             <button type="button" class="cancel" onclick="history.back()"><</button>
             <h1>{{ playlist.title }}</h1>
-            <button type="button" class="plus">+</button>
+            <button type="button" class="plus" onclick="location.href = '{% url '플리:show_video_create' %}'">+</button>
+        </div>
+        <div class="container-content">
+            {% for v in video %}
+                <li>{{ v }}</li>
+            {% endfor %}
         </div>
     </div>
 

@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.views.generic import FormView, CreateView, ListView, DeleteView, UpdateView, DetailView
 
 from 플리.forms.user_forms import EmailLoginForm, SignUpForm
-from 플리.models import User, PlayList
+from 플리.models import User, PlayList, Video
 
 
 def show_index(request):
@@ -51,9 +51,19 @@ class PlayListView(ListView):
 
 class PlayListDetailView(DetailView):
     model = PlayList
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['video'] = Video.objects.filter(playlist=self.kwargs['pk'])
+        return context
 
 class PlayListCreateView(CreateView):
     model = PlayList
+    fields = '__all__'
+    template_name_suffix = '_create'
+    success_url = reverse_lazy('플리:show_mypage')
+
+class VideoCreateView(CreateView):
+    model = Video
     fields = '__all__'
     template_name_suffix = '_create'
     success_url = reverse_lazy('플리:show_mypage')

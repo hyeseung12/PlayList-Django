@@ -1,0 +1,45 @@
+.container {
+    text-align: center;
+    margin-top: 3vmin;
+    border: 1px solid black;
+    padding-top: 10vmin;
+    padding-bottom: 10vmin;
+}
+
+form {
+    margin-top: 7vmin;
+}
+
+textarea {
+    height: 10vmin;
+}
+
+input[type='text'] {
+    text-align: left;
+}
+
+button[type='submit'] {
+    width: 40vmin;
+    height: 5vmin;
+    line-height: 0;
+    border: 0;
+    margin-top: 62px;
+    background-color: var(--primary);
+    color: white;
+    font-size: var(--content-font-size);
+}
+
+button[type='button'] {
+    width: 40vmin;
+    height: 5vmin;
+    line-height: 0;
+    border: 0;
+    margin-top: 62px;
+    background-color: gray;
+    color: white;
+    font-size: var(--content-font-size);
+}
+
+select {
+    width: 200px;
+}
