@@ -77,4 +77,4 @@ class PlayList(models.Model):
     )
 
     def __str__(self):
-        return f'{self.title} {self.created_at} {self.updated_at} {self.author}'
+        return f'{self.title} {self.image} {self.created_at} {self.updated_at} {self.author}'

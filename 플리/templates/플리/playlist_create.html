@@ -10,11 +10,10 @@
     <div class="container">
         <h1>Create PlayList</h1>
         <p>본인만의 커스텀 플레이리스트를 만들어보세요!</p>
-        <form method="post" action="{% url '플리:show_mypage' %}">
+        <form method="post" action="">
             {% csrf_token %}
-
-            <input type="text" name="title" placeholder="제목 입력"/>
-            <button type=""
+            {{ form.as_p }}
+            <button type="submit">생성하기</button>
         </form>
     </div>
 

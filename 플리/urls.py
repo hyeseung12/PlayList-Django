@@ -1,7 +1,7 @@
 from django.urls import path
 
 from 플리 import views
-from 플리.views import EmailLoginView, SignUpView
+from 플리.views import EmailLoginView, SignUpView, PlayListCreateView
 
 app_name = '플리'
 
@@ -11,5 +11,5 @@ urlpatterns = [
     path('signup/', SignUpView.as_view(), name='show_signup'),
     path('url/', views.show_url, name='show_url'),
     path('mypage/', views.show_mypage, name='show_mypage'),
-    path('create/', views.show_create, name='show_create'),
+    path('create/', PlayListCreateView.as_view(), name='show_create'),
 ]

@@ -1,9 +1,10 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import FormView, CreateView
 
-from 플리.forms import EmailLoginForm, UserCreateForm, SignUpForm
+from 플리.forms.user_forms import EmailLoginForm, SignUpForm
 from 플리.models import User, PlayList
 
 
@@ -51,8 +52,10 @@ def show_mypage(request):
 
 class PlayListCreateView(CreateView):
     model = PlayList
-    fields = ['title', 'image', 'author']
+    fields = '__all__'
+    template_name_suffix = '_create'
+    success_url = reverse_lazy('플리:show_mypage')
 
 def show_create(request):
     context = {}
-    return render(request, '플리/create.html', context=context)
+    return render(request, '플리/playlist_create.html', context=context)
