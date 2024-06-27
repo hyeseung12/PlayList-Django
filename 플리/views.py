@@ -32,8 +32,10 @@ class SignUpView(FormView):
         password = form.cleaned_data.get('password')
 
         if User.objects.filter(email=email).first() is None:
+            print("user")
             user = User(email=email, password=password)
             user.save()
+            return redirect('플리:show_login')
 
         return self.form_invalid(form)
 

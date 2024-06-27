@@ -64,11 +64,5 @@ class SignUpForm(AuthenticationForm):
                     code='inactive',
                     params={'username': self.username_field.verbose_name},
                 )
-            else:
-                user = User(
-                    email = email,
-                    password = password
-                )
-                user.save()
-                self.email = user.email
+
         return self.cleaned_data
