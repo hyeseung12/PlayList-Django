@@ -15,8 +15,8 @@
         <br>
         <div class="container-content">
             {% for playList in playlist_list %}
-                <div class="container-playlist" onclick="location.href='{% url '플리:show_detail' pk=playList.id %}'">
-                    <img src="/static/{{ playList.image }}" class="playlist-img"/><br>
+                <div class="container-playlist">
+                    <img src="/static/{{ playList.image }}" class="playlist-img" onclick="location.href='{% url '플리:show_detail' pk=playList.id %}'"/><br>
                     <div class="container-info">
                         <h2>{{ playList.title }}</h2>
 
