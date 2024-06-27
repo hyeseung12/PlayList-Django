@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Create PlayList</h1>
         <p>본인만의 커스텀 플레이리스트를 만들어보세요!</p>
-        <form method="post" action="">
+        <form method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">생성하기</button>
