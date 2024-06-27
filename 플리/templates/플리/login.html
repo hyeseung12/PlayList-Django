@@ -1,8 +1,20 @@
-{% extends 'login.html' %}
+{% extends 'base.html' %}
 
-{% block login %}로그인{% endblock %}
-{% block h1 %}로그인{% endblock %}
-{% block button %}로그인{% endblock %}
-{% block signup %}
-    <p onclick="location.href='/플리/signup'">회원가입</p>
+{% load static %}
+
+{% block title %}로그인{% endblock %}
+{% block meta %}<link rel="stylesheet" href={% static 'css/login.css' %}/>{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>로그인</h1>
+        <p>사용자 정보를 입력해주세요!</p>
+        <form method="post" action="{% url '플리:show_login' %}">
+        {% csrf_token %}
+            <input type="text" name="username" id="email" placeholder="이메일 입력" value="{{ form.username.value|default_if_none:'' }}"/><br>
+            <input type="text" name="password" id="password" placeholder="비밀번호 입력" value="{{ form.password.value|default_if_none:'' }}"/><br>
+            <button type="submit" name="login">로그인</button>
+        </form>
+        <p onclick="location.href='/플리/signup'">회원가입</p>
+    </div>
 {% endblock %}
