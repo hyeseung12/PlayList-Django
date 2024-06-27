@@ -24,6 +24,7 @@
       4. show_url
       5. show_mypage
       6. show_create
+      7. show_delete
    3. templates/플리/
       1. index.html
       2. login.html
@@ -31,6 +32,7 @@
       4. url.html
       5. playlist_list.html
       6. playlist_create.html
+      7. playlist_confirm_delete.html
    4. urls
       1. 플리:show_index
       2. 플리:EmailLoginView.as_view()
@@ -38,14 +40,16 @@
       4. 플리:show_url
       5. 플리:playListview.as_view()
       6. 플리:PlayListCreateView.as_view()
+      7. 플리:PlayListDeleteView.as_view()
    5. static/
       1. css/
          1. index.css > index html 스타일 시트
          2. login.css > login, signup html 스타일 시트 
          3. style.css > 전역 스타일 시트
-         4. create.css > playList create html 스타일
-         5. mypage.css > playList list view html 스타일
-         6. url.css > url html 스타일 시트
+         4. create.css > playList create html 스타일 시트
+         5. delete.css > playList delete html 스타일 시트
+         6. mypage.css > playList list view html 스타일 시트
+         7. url.css > url html 스타일 시트
       2. img/
          1. solar_play-bold-duotone.svg > 로고 이미지
          2. sound-bar.svg > 사운드바 이미지
