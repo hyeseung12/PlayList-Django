@@ -55,6 +55,3 @@ class PlayListCreateView(CreateView):
     template_name_suffix = '_create'
     success_url = reverse_lazy('플리:show_mypage')
 
-def show_create(request):
-    context = {}
-    return render(request, '플리/playlist_create.html', context=context)
