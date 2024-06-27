@@ -2,7 +2,7 @@ from django.contrib.auth import login
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils import timezone
-from django.views.generic import FormView, CreateView, ListView, DeleteView, UpdateView
+from django.views.generic import FormView, CreateView, ListView, DeleteView, UpdateView, DetailView
 
 from 플리.forms.user_forms import EmailLoginForm, SignUpForm
 from 플리.models import User, PlayList
@@ -47,6 +47,9 @@ def show_url(request):
     return render(request, '플리/url.html', context=context)
 
 class PlayListView(ListView):
+    model = PlayList
+
+class PlayListDetailView(DetailView):
     model = PlayList
 
 class PlayListCreateView(CreateView):
