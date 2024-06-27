@@ -13,12 +13,19 @@
 }
 
 .container-detail {
+    width: 100%;
+    display: inline-flex;
     border: 1px solid black;
     border-radius: 10px;
     padding-top: 2vmin;
     padding-bottom: 2vmin;
     padding-left: 5vmin;
     margin-bottom: 4vmin;
+}
+
+iframe {
+    width: 40vmin;
+    height: 25vmin;
 }
 
 h4 {

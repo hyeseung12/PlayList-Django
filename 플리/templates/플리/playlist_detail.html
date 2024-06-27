@@ -16,10 +16,14 @@
         <div class="container-content">
             {% for v in video %}
                 <div class="container-detail">
-                    <button type="button" class="delete" onclick="location.href='{% url '플리:show_video_delete' pk=v.id %}'">X</button>
-                    <h4>{{ v.title }}</h4>
-                    <p>{{ v.uploader_name }}</p>
-
+                    <div>
+                        <button type="button" class="delete"
+                                onclick="location.href='{% url '플리:show_video_delete' pk=v.id %}'">X
+                        </button>
+                        <h4>{{ v.title }}</h4>
+                        <p>{{ v.uploader_name }}</p>
+                    </div>
+                    {{ v.url|safe }}
                 </div>
             {% endfor %}
         </div>
