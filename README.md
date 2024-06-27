@@ -14,7 +14,7 @@
       1. User
          1. id, pw, created_at, updated_at
       2. PlayList
-         1. id, title, created_at, updated_at, author
+         1. id, title, image, created_at, updated_at, author
       3. python manage.py makemigrations 플리
       4. python manage.py migrate
    2. views
