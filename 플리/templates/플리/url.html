@@ -2,12 +2,82 @@
 
 {% load static %}
 
-{% block title %}로그인{% endblock %}
-{% block meta %}<link rel="stylesheet" href={% static 'css/login.css' %}/>{% endblock %}
+{% block title %}URL{% endblock %}
+{% block meta %}
+    <link rel="stylesheet" href={% static 'css/url.css' %}/>
+    <script src="https://www.youtube.com/iframe_api"></script>
+{% endblock %}
 
 {% block content %}
     <div class="container">
-        <h1>로그인</h1>
-        <p>사용자 정보를 입력해주세요!</p>
+        <h1>Youtube의 URL 작성</h1>
+        <p>URL을 작성하여 동영상을 커스텀 마이징 할 수 있습니다!</p>
+        <form id="form" onsubmit="return false;">
+            <input type="text" id="url" name="url" required><br>
+            <button type="submit" onclick="loadVideo()">Load Video</button>
+        </form>
+        <div class="container-option">
+            <label for="pitch">Pitch (Playback Rate):</label>
+            <input type="range" id="pitch" min="0.5" max="2" step="0.05" value="1" oninput="changePitch(this.value)">
+            <br>
+            <label for="volume" class="volume">Volume:</label>
+            <input type="range" id="volume" min="0" max="100" value="100" oninput="changeVolume(this.value)">
+        </div>
+        <div id="player"></div>
     </div>
+    <script>
+        let player;
+
+        function onYouTubeIframeAPIReady() {
+            console.log('YouTube API loaded.');
+        }
+
+        function loadVideo() {
+            const url = document.getElementById('url').value;
+            const videoId = getYoutubeId(url);
+
+            if (!videoId) {
+                alert('Invalid YouTube URL');
+                return;
+            }
+
+            if (player) {
+                player.destroy();
+            }
+
+            player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                videoId: videoId,
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function getYoutubeId(url) {
+            const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[7].length === 11) ? match[7] : null;
+        }
+
+        function onPlayerReady(event) {
+            console.log('YouTube Player is ready.');
+            changeVolume(100); // 초기 볼륨 설정
+        }
+
+        function changePitch(value) {
+            if (player) {
+                player.setPlaybackRate(parseFloat(value));
+                console.log(`Playback rate changed to ${value}`);
+            }
+        }
+
+        function changeVolume(value) {
+            if (player) {
+                player.setVolume(parseInt(value));
+                console.log(`Volume changed to ${value}%`);
+            }
+        }
+    </script>
 {% endblock %}
