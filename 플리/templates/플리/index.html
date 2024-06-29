@@ -3,10 +3,20 @@
 {% load static %}
 
 {% block title %}Character list{% endblock %}
-{% block meta %}<link rel="stylesheet" href={% static 'css/index.css' %}/>{% endblock %}
+{% block meta %}
+    <link rel="stylesheet" href={% static 'css/index.css' %}/>{% endblock %}
 
 {% block content %}
 
     <img src="{% static 'img/sound-bar.svg' %}" alt="사운드바" class="sound-bar"/>
+    <div class="audio-container">
+        <div class="container-info">
+            <h1>QWER - 고민중독</h1>
+            <p>2024-06-29</p>
+        </div>
+        <audio controls autoplay>
+            <source src="{% static 'audio/고민중독.mp3' %}" type="audio/mpeg">
+        </audio>
+    </div>
 
 {% endblock %}

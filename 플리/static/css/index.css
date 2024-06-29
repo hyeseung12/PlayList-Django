@@ -2,4 +2,14 @@
     display: block;
 	width: inherit;
 	height: auto;
+	margin-top: -5vmin;
+}
+
+.audio-container {
+	margin-top: -9vmin;
+    text-align: center;
+}
+
+.container-info {
+	margin-bottom: 4vmin;
 }
