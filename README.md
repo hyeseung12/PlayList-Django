@@ -30,6 +30,7 @@
       8. show_detail
       9. show_video_create
       10. show_video_delete
+      11. show_url
    3. templates/플리/
       1. index.html
       2. login.html
@@ -41,6 +42,7 @@
       8. playlist_detail.html
       9. video_create.html
       10. video_confirm_delete.html
+      11. url.html
    4. urls
       1. 플리:show_index
       2. 플리:EmailLoginView.as_view()
@@ -52,6 +54,7 @@
       8. 플리:PlayListDetailView.as_view()
       9. 플리:VideoCreateView.as_view()
       10. 플리:VideoDeleteView.as_view()
+      11. 플리:show_url
    5. static/
       1. css/
          1. style.css > 전역 스타일 시트
@@ -62,11 +65,14 @@
          6. mypage.css > playList list view html 스타일 시트
          7. detail.css > playlist detail html 스타일 시트
          8. video-create.css > video create html 스타일 시트
+         9. url.css > url html 스타일 시트
       2. img/
          1. solar_play-bold-duotone.svg > 로고 이미지
          2. sound-bar.svg > 사운드바 이미지
          3. delete.svg > playList 삭제 이미지
          4. edit.svg > playList 수정 이미지
+      3. audio
+         1. 고민중독.mp3 > index 메인 오디오
 4. templates/
    1. base.html
       1. settings.py > TEMPLATES
