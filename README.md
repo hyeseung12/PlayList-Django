@@ -10,6 +10,31 @@
 
 - 2024-05-18 ~ 2024-06-29
 
+## 프로젝트 사용 기술
+
+Django, Python, Html, Css, Javascript
+
+## 프로젝트 폴더 구조
+
+```
+├─playList
+│  └─__pycache__
+├─templates
+└─플리
+    ├─forms
+    │  └─__pycache__
+    ├─migrations
+    │  └─__pycache__
+    ├─static
+    │  ├─audio
+    │  ├─css
+    │  └─img
+    │      └─플리
+    ├─templates
+    │  └─플리
+    └─__pycache__
+```
+
 ## 주요 기능
 
 - 첫 메인화면으로 본인이 최근에 들은 곡이 나와 있으며 재생할 수 있습니다.
